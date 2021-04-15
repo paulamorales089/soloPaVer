@@ -53,6 +53,8 @@ public class principal extends PApplet{
 	//SWICHT BETWEEN SCREENS
 		int stay;
 			
+	//MOVE PARALAX
+	boolean moveParalax;
 	
 	@Override
 	public void setup() {
@@ -88,7 +90,7 @@ public class principal extends PApplet{
 		lestGoButton  = loadImage("lest go.png");;
 
 	//PARALAX EFFECT
-		paralaxX =  (mouseX+600)/15;
+		moveParalax = true;
 	//SWICHT BETWEEN SCREENS	
 		stay = 4;
 
@@ -140,7 +142,14 @@ public class principal extends PApplet{
 	}
 	
 	if (stay == 4) {
-		image(gameCave,paralaxX,0);
+		paralaxX =  mouseX;
+		image(gameCave,-paralaxX,0);
+		if(mouseX<=50) {
+			moveParalax =false;
+			
+			
+			
+		}
 		
 		
 	}
